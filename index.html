@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mount Longonot Mabati Factory</title>
+  <title>Mt Longonot Mabati Factory Ltd</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,10 +12,19 @@
       background-color: #f4f4f4;
     }
     header {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
+      background-image: url('https://images.unsplash.com/photo-1587740896335-c44dcf6b34dc?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: top center;
+      color: #ffcc00;
+      padding: 60px 0;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
     }
     nav {
       background-color: #444;
@@ -37,8 +46,36 @@
       padding: 20px;
       background: white;
     }
-    .services, .about, .contact {
+    section {
       margin-bottom: 40px;
+    }
+    .gallery {
+      position: relative;
+      margin-bottom: 40px;
+      overflow: hidden;
+      height: 400px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .gallery img.active {
+      opacity: 1;
+      position: relative;
+    }
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-gallery img {
+      width: 100%;
+      border-radius: 8px;
+      height: auto;
     }
     footer {
       background-color: #333;
@@ -51,44 +88,90 @@
 </head>
 <body>
   <header>
-    <h1>Mount Longonot Mabati Factory</h1>
-    <p>Quality Roofing You Can Trust</p>
+    <h1>Mt Longonot Mabati Factory Ltd</h1>
+    <p>Mabati Ya Ki-Sure</p>
   </header>
 
   <nav>
-    <a href="#services">Services</a>
     <a href="#about">About Us</a>
+    <a href="#why">Why Choose Us</a>
+    <a href="#products">Our Products</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
-    <section id="services" class="services">
-      <h2>Our Services</h2>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>MT Longonot Mabati Factory is an upcoming manufacturer of high quality roofing sheets. We provide reliable and durable roofing solutions to homes and businesses across Kenya. We are located in Mirera Mastima Centre along Naivasha-Maai Mahiu highway in Naivasha.</p>
+    </section>
+
+    <section id="why">
+      <h2>Why Choose Us</h2>
       <ul>
-        <li>Residential & Commercial Roof Installation</li>
-        <li>Roof Repairs and Maintenance</li>
-        <li>Gutter Installation & Cleaning</li>
-        <li>Roof Inspection & Leak Detection</li>
-        <li>Emergency Storm Damage Repair</li>
+        <li>Trusted and Reliable</li>
+        <li>Affordable Pricing</li>
+        <li>Skilled Professionals</li>
+        <li>Timely Project Completion</li>
+        <li>Customer Satisfaction Guaranteed</li>
       </ul>
     </section>
 
-    <section id="about" class="about">
-      <h2>About Us</h2>
-      <p>Mount Longonot Mabati Factory has years of experience providing high-quality roofing services. We are fully licensed and insured, and we pride ourselves on using only premium materials and trained professionals to deliver durable and reliable roofing solutions for homes and businesses.</p>
+    <section id="products">
+      <h2>Our Products</h2>
+      <ul>
+        <li>Box Profile Sheets</li>
+        <li>Longonot Valletile</li>
+        <li>Longonot Roman Tile</li>
+        <li>Longonot Roll Top</li>
+        <li>Longonot Bowtile</li>
+        <li>Longonot Valleys</li>
+        <li>Longonot Ridge Cap Sheets</li>
+        <li>Roofing Nails and Rubbers</li>
+        <li>Corrugated Mabati</li>
+        <li>Coloured & Custom Length Sheets</li>
+      </ul>
+      <div class="product-gallery">
+        <img src="https://www.rafikiroofing.co.ke/images/products/box-profile.jpg" alt="Box Profile">
+        <img src="https://www.rafikiroofing.co.ke/images/products/valley-tile.jpg" alt="Valletile">
+        <img src="https://www.rafikiroofing.co.ke/images/products/roman-tile.jpg" alt="Roman Tile">
+        <img src="roll top.jpg"alt="Roll Top">
+        <img src="https://www.rafikiroofing.co.ke/images/products/bowtile.jpg" alt="Bowtile">
+        <img src="https://www.rafikiroofing.co.ke/images/products/valleys.jpg" alt="Valleys">
+        <img src="https://www.rafikiroofing.co.ke/images/products/ridge-cap.jpg" alt="Ridge Cap">
+        <img src="https://www.rafikiroofing.co.ke/images/products/nails-rubbers.jpg" alt="Roofing Nails and Rubbers">
+      </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section class="gallery">
+      <h2>Project Gallery</h2>
+      <img src="https://images.unsplash.com/photo-1591375273147-31d862cb1c91?auto=format&fit=crop&w=800&q=80" alt="Completed Roofing Project 1" class="active">
+      <img src="https://images.unsplash.com/photo-1600708854350-0a1b8d8eb458?auto=format&fit=crop&w=800&q=80" alt="Completed Roofing Project 2">
+      <img src="https://images.unsplash.com/photo-1615491082412-6cc6b928c2df?auto=format&fit=crop&w=800&q=80" alt="Completed Roofing Project 3">
+    </section>
+
+    <section id="contact">
       <h2>Contact Us</h2>
       <p>Have questions or need a free estimate? We're here to help!</p>
-      <p>Email: info@mountlongonotmabatifactory.com</p>
-      <p>Phone: +1 (234) 567-8901</p>
-      <p>Address: 123 Roof Lane, Rooftown, TX 78901</p>
+      <p>Email: longonotmabatifactory@gmail.com</p>
+      <p>Phone: +254 718 081 490, +254 757 400 092</p>
+      <p>Address: P.O BOX 843-20117, Naivasha</p>
+      <p>Location: Mirera Mastima Centre, Naivasha-Maai Mahiu highway, Naivasha</p>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Mount Longonot Mabati Factory | All Rights Reserved</p>
+    <p>&copy; 2025 Mount Longonot Mabati Factory Limited | All Rights Reserved</p>
   </footer>
+
+  <script>
+    const slides = document.querySelectorAll(".gallery img");
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000);
+  </script>
 </body>
 </html>
