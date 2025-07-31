@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.gallery-container {
+  max-width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.gallery-container img.active {
+  opacity: 1;
+  z-index: 1;
+}
