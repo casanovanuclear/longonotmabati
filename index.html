@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,7 +16,7 @@
       background-color: #f4f4f4;
     }
     header {
-      background-image: url('roof header.jpeg');
+      background-image: url('https://images.unsplash.com/photo-1622560483570-3c598db99315?auto=format&fit=crop&w=1200&q=80');
       background-size: cover;
       background-position: top center;
       color: white;
@@ -54,6 +55,24 @@
     section {
       margin-bottom: 40px;
     }
+    .gallery {
+      position: relative;
+      margin-bottom: 40px;
+      overflow: hidden;
+      height: 300px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .gallery img.active {
+      opacity: 1;
+      position: relative;
+    }
     .product-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -64,27 +83,6 @@
       border-radius: 8px;
       height: 160px;
       object-fit: cover;
-    }
-    .gallery {
-  position: relative;
-  width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-}
-.gallery img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.gallery img.active {
-  opacity: 1;
-  z-index: 1;
-}
-
     }
     footer {
       background-color: #333;
@@ -108,41 +106,29 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       header h1 {
-        font-size: 2em;
+        font-size: 1.8em;
       }
       header p {
         font-size: 1em;
       }
       nav a {
         padding: 10px;
-        font-size: 0.85em;
-      }
-      .container {
-        padding: 10px;
-      }
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6em;
-      }
-      header p {
-        font-size: 0.95em;
-      }
-      nav a {
-        padding: 8px;
         font-size: 0.8em;
       }
+      .gallery {
+        height: 200px;
+      }
       .product-gallery img {
-        height: 120px;
+        height: 140px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mt Longonot Mabati Factory Ltd</h1>
+    <h1>Mount Longonot Mabati Factory</h1>
     <p>Mabati Ya Ki-Sure</p>
   </header>
 
@@ -154,7 +140,6 @@
     <a href="#privacy">Privacy Policy</a>
     <a href="#security">Security Policy</a>
   </nav>
-
 
   <div class="container">
     <section id="about">
@@ -252,23 +237,16 @@
   </footer>
 
   <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    // Only run this if the #email element exists
-    const emailEl = document.getElementById("email");
-    if (emailEl) {
-      emailEl.innerHTML = '<a href="mailto:longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
-    }
+    const slides = document.querySelectorAll(".gallery img");
+    let index = 0;
 
-    const images = document.querySelectorAll('.gallery img');
-    let current = 0;
-    if (images.length > 0) {
-      setInterval(() => {
-        images[current].classList.remove('active');
-        current = (current + 1) % images.length;
-        images[current].classList.add('active');
-      }, 3000);
-    }
-  });
-</script>
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000);
+
+    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
+  </script>
 </body>
 </html>
