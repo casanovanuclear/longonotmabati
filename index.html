@@ -258,18 +258,14 @@
   </script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.gallery img');
+    const images = document.querySelectorAll('.gallery img');
     let current = 0;
 
-    if (slides.length > 0) {
-      slides[current].classList.add('active');
-
-      setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 3000);
-    }
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000); // change image every 3 seconds
   });
 </script>
 </body>
