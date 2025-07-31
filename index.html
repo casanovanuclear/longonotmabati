@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline';">
   <title>Mt Longonot Mabati Factory Ltd</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -12,30 +16,32 @@
       background-color: #f4f4f4;
     }
     header {
-      background-image: url('roof header.jpeg');
-      background-size: center;
+      background-image: url('roof header.jpg');
+      background-size: cover;
       background-position: top center;
-      color: #ffcc00;
-      padding: 60px 0;
+      color: white;
+      padding: 60px 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 3em;
+      font-size: 2.5em;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
     nav {
       background-color: #444;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
     }
     nav a {
       color: white;
-      padding: 14px 20px;
+      padding: 12px;
       text-decoration: none;
       text-transform: uppercase;
+      font-size: 0.9em;
     }
     nav a:hover, nav a:focus {
       background-color: #666;
@@ -53,7 +59,7 @@
       position: relative;
       margin-bottom: 40px;
       overflow: hidden;
-      height: 400px;
+      height: 300px;
     }
     .gallery img {
       width: 100%;
@@ -69,20 +75,54 @@
     }
     .product-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
     }
     .product-gallery img {
       width: 100%;
       border-radius: 8px;
-      height: auto;
+      height: 160px;
+      object-fit: cover;
     }
     footer {
       background-color: #333;
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px 10px;
       margin-top: 40px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 0.8em;
+      }
+      .gallery {
+        height: 200px;
+      }
+      .product-gallery img {
+        height: 140px;
+      }
     }
   </style>
 </head>
@@ -97,8 +137,8 @@
     <a href="#why">Why Choose Us</a>
     <a href="#products">Our Products</a>
     <a href="#contact">Contact</a>
-    <a href="privacy">Privacy</a>
-    <a href="security">Security Policy</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#security">Security Policy</a>
   </nav>
 
   <div class="container">
@@ -161,7 +201,7 @@
     
     <p style="font-size: 18px;"><strong>Phone:</strong> <a href="tel:+254 718 081 490" style="color: #007BFF;">+254 718 081 490</a></p>
     <p style="font-size: 18px;"><strong>WhatsApp:</strong> <a href="https://wa.me/+254 718 081 490" target="_blank" style="color: #007BFF;">Chat with us</a></p>
-    <p style="font-size: 18px;"><strong>Email:</strong> <a href="mailto:longonotmabati@gmail.com" style="color: #007BFF;">longonotmabati@gmail.com</a></p>
+    <p style="font-size: 18px;"><strong>Email:</strong> <a href="mailto:longonotmabatifactory@gmail.com" style="color: #007BFF;">longonotmabatifactory@gmail.com</a></p>
        <p>Address: P.O BOX 843-20117, Naivasha</p>
       <p>Location: Mirera Mastima Centre, Naivasha-Maai Mahiu highway, Naivasha</p>
   </div>
@@ -190,11 +230,11 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Mount Longonot Mabati Factory Limited | All Rights Reserved</p>
-     <div class="footer-links">
+    <p>&copy; 2025 Mount Longonot Mabati Factory | All Rights Reserved</p>
+    <div class="footer-links">
       <a href="#privacy">Privacy Policy</a>
-      <a href="#security">Security Policy</a> 
-       </div>
+      <a href="#security">Security Policy</a>
+    </div>
   </footer>
 
   <script>
@@ -206,6 +246,8 @@
       index = (index + 1) % slides.length;
       slides[index].classList.add("active");
     }, 3000);
+
+    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabati.com">longonotmabatifactory@gmail.com</a>';
   </script>
 </body>
 </html>
