@@ -244,15 +244,23 @@
   </footer>
 
   <script>
-    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
+  window.addEventListener('DOMContentLoaded', () => {
+    // Only run this if the #email element exists
+    const emailEl = document.getElementById("email");
+    if (emailEl) {
+      emailEl.innerHTML = '<a href="mailto:longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
+    }
 
     const images = document.querySelectorAll('.gallery img');
     let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  </script>
+    if (images.length > 0) {
+      setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+      }, 3000);
+    }
+  });
+</script>
 </body>
 </html>
