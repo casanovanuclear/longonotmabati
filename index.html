@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -55,24 +54,6 @@
     section {
       margin-bottom: 40px;
     }
-    .gallery {
-      position: relative;
-      margin-bottom: 40px;
-      overflow: hidden;
-      height: 300px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .gallery img.active {
-      opacity: 1;
-      position: relative;
-    }
     .product-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -83,6 +64,19 @@
       border-radius: 8px;
       height: 160px;
       object-fit: cover;
+    }
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .gallery img {
+      width: 100%;
+      display: none;
+      height: auto;
+    }
+    .gallery img.active {
+      display: block;
     }
     footer {
       background-color: #333;
@@ -106,30 +100,42 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 1.8em;
+        font-size: 2em;
       }
       header p {
         font-size: 1em;
       }
       nav a {
         padding: 10px;
+        font-size: 0.85em;
+      }
+      .container {
+        padding: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+      header p {
+        font-size: 0.95em;
+      }
+      nav a {
+        padding: 8px;
         font-size: 0.8em;
       }
-      .gallery {
-        height: 200px;
-      }
       .product-gallery img {
-        height: 140px;
+        height: 120px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mt Longonot Mabati Factory Ltd</h1>
-    <p>Mabati Ya Ki-Sure</p>
+    <h1>Mount Longonot Mabati Factory</h1>
+    <p>Quality Roofing You Can Trust</p>
   </header>
 
   <nav>
@@ -140,6 +146,7 @@
     <a href="#privacy">Privacy Policy</a>
     <a href="#security">Security Policy</a>
   </nav>
+
 
   <div class="container">
     <section id="about">
@@ -237,16 +244,15 @@
   </footer>
 
   <script>
-    const slides = document.querySelectorAll(".gallery img");
-    let index = 0;
+    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
 
+    const images = document.querySelectorAll('.gallery img');
+    let current = 0;
     setInterval(() => {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
     }, 3000);
-
-    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabati.com">longonotmabatifactory@gmail.com</a>';
   </script>
 </body>
 </html>
