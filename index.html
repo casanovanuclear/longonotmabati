@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline';">
   <title>Mt Longonot Mabati Factory Ltd</title>
   <style>
-    .logo {
-  max-width: 150px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
-.header-content {
-  text-align: center;
-  color: yellow;
-  background-image: url('roof header.jpeg');
-  background-size: cover;
-  background-position: top center;
-  padding: 60px 20px;
-}
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #666d3b;
-    }
     header {
-      background-image: url('roof header.jpeg');
+      background: url('roof-header.jpg') no-repeat center center;
       background-size: cover;
-      background-position: top center;
-      color: yellow;
-      padding: 60px 20px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      position: relative;
+      padding: 20px;
+      color: yellow;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    .header-content {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
+    .logo {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     header p {
       font-size: 1.1em;
     }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
     nav {
       background-color: #444;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     nav a {
       color: white;
       padding: 12px;
@@ -57,54 +61,61 @@
       text-transform: uppercase;
       font-size: 0.9em;
     }
+
     nav a:hover, nav a:focus {
       background-color: #666;
     }
+
     .container {
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
       background: white;
     }
+
     section {
       margin-bottom: 40px;
     }
-.gallery {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 8px;
-}
 
-.gallery img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
+    .gallery {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
 
-.gallery img.active {
-  opacity: 1;
-  z-index: 1;
-}
+    .gallery img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+
+    .gallery img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
     .product-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 16px;
     }
+
     .product-gallery img {
       width: 100%;
       border-radius: 8px;
       height: 160px;
       object-fit: cover;
     }
+
     footer {
       background-color: #333;
       color: white;
@@ -112,6 +123,7 @@
       padding: 20px 10px;
       margin-top: 40px;
     }
+
     .footer-links {
       display: flex;
       flex-wrap: wrap;
@@ -119,28 +131,39 @@
       gap: 10px;
       margin-top: 10px;
     }
+
     .footer-links a {
       color: #ccc;
       text-decoration: none;
       font-size: 0.9em;
     }
+
     .footer-links a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 600px) {
+      header {
+        height: 70vh;
+      }
+
       header h1 {
         font-size: 1.8em;
       }
+
       header p {
         font-size: 1em;
       }
+
       nav a {
         padding: 10px;
         font-size: 0.8em;
       }
+
       .gallery {
         height: 200px;
       }
+
       .product-gallery img {
         height: 140px;
       }
@@ -148,142 +171,131 @@
   </style>
 </head>
 <body>
+
 <header>
   <div class="header-content">
     <img src="Company Logo.png" alt="Company Logo" class="logo">
     <h1>Mount Longonot Mabati Factory</h1>
-    <p>Mabati Ya Ki-Sure</p>
+    <p class="slogan">Mabati Ya Ki-Sure</p>
   </div>
 </header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#why">Why Choose Us</a>
-    <a href="#products">Our Products</a>
-    <a href="#contact">Contact</a>
+<nav>
+  <a href="#about">About Us</a>
+  <a href="#why">Why Choose Us</a>
+  <a href="#products">Our Products</a>
+  <a href="#contact">Contact</a>
+  <a href="#privacy">Privacy Policy</a>
+  <a href="#security">Security Policy</a>
+</nav>
+
+<div class="container">
+  <section id="about">
+    <h2>About Us</h2>
+    <p>MT Longonot Mabati Factory is an upcoming manufacturer of high quality roofing sheets. We provide reliable and durable roofing solutions to homes and businesses across Kenya. We are located in Mirera Mastima Centre along Naivasha-Maai Mahiu highway in Naivasha.</p>
+  </section>
+
+  <section id="why">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Trusted and Reliable. We sell high quality roof sheets which meet roofing industry standards and withstand local weather.</li>
+      <li>Affordable Pricing. We offer the best prices in the market for different varieties of mabati.</li>
+      <li>Skilled Professionals</li>
+      <li>Timely Project Completion and Delivery Services</li>
+      <li>Customer Satisfaction Guaranteed</li>
+    </ul>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Box Profile Sheets</li>
+      <li>Longonot Valletile</li>
+      <li>Longonot Roman Tile</li>
+      <li>Longonot Roll Top</li>
+      <li>Longonot Bowtile</li>
+      <li>Longonot Valleys</li>
+      <li>Longonot Ridge Cap Sheets</li>
+      <li>Roofing Nails and Rubbers</li>
+      <li>Corrugated Mabati</li>
+      <li>Coloured & Custom Length Sheets</li>
+    </ul>
+    <div class="product-gallery">
+      <img src="box profile.jpg" alt="Box Profile">
+      <img src="valletile.jpg" alt="Valletile">
+      <img src="roman tile.jpg" alt="Roman Tile">
+      <img src="Roll Top.jpg" alt="Roll Top">
+      <img src="bowtile.jpg" alt="Bowtile">
+      <img src="valleys.jpg" alt="Valleys">
+      <img src="ridge cap.jpg" alt="Ridge Cap">
+      <img src="Roofing Nails and Rubbers.jpg" alt="Roofing Nails and Rubbers">
+      <img src="root 8.jpg" alt="Root 8">
+      <img src="root 9.jpg" alt="Root 9">
+    </div>
+  </section>
+
+  <section>
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+      <img src="root 3.jpg" alt="Root 3" class="active">
+      <img src="root 4.jpg" alt="Root 4">
+      <img src="root 5.jpg" alt="Root 5">
+      <img src="root 6.jpg" alt="Root 6">
+      <img src="root 7.jpg" alt="Root 7">
+    </div>
+  </section>
+
+  <section id="contact" style="background-color: #f7f7f7; padding: 50px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 32px; margin-bottom: 20px; color: #333;">Contact Us</h2>
+      <p style="font-size: 18px;"><strong>Phone:</strong> <a href="tel:+254718081490" style="color: #007BFF;">+254 718 081 490</a>, <a href="tel:+254757400092" style="color: #007BFF;">+254 757 400 092</a></p>
+      <p style="font-size: 18px;"><strong>WhatsApp:</strong> <a href="https://wa.me/254757400092" target="_blank" style="color: #007BFF;">Chat with us</a></p>
+      <p style="font-size: 18px;"><strong>Email:</strong> <a href="mailto:longonotmabatifactory@gmail.com" style="color: #007BFF;">longonotmabatifactory@gmail.com</a></p>
+      <p>Address: P.O BOX 843-20117, Naivasha</p>
+      <p>Location: Mirera Mastima Centre, Naivasha-Maai Mahiu highway, Naivasha</p>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>At Mount Longonot Mabati Factory, we value your privacy.</p>
+    <p>We do <strong>not collect</strong>, store, or share any personal information from visitors to this website. This site is intended to provide general information about our roofing products and services only.</p>
+    <p>We do not use cookies, tracking technologies, or analytics tools. If we add features in the future that require collecting any personal information, we will update this policy accordingly.</p>
+  </section>
+
+  <section id="security">
+    <h2>Security Policy</h2>
+    <p>At Mount Longonot Mabati Factory, we are committed to ensuring the security of our website and any information shared through it.</p>
+    <ul>
+      <li>We use secure hosting environments to minimize risk.</li>
+      <li>All website data is protected using standard security protocols.</li>
+      <li>We do not store sensitive customer information on this site.</li>
+      <li>All forms use encrypted communication (HTTPS).</li>
+      <li>We routinely monitor and update for vulnerabilities.</li>
+    </ul>
+    <p>If you identify any issues or vulnerabilities, please notify us at <strong>longonotmabatifactory@gmail.com</strong>.</p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Mount Longonot Mabati Factory | All Rights Reserved</p>
+  <div class="footer-links">
     <a href="#privacy">Privacy Policy</a>
     <a href="#security">Security Policy</a>
-  </nav>
-
-  <div class="container">
-    <section id="about">
-      <h2>About Us</h2>
-      <p>MT Longonot Mabati Factory is an upcoming manufacturer of high quality roofing sheets. We provide reliable and durable roofing solutions to homes and businesses across Kenya. We are located in Mirera Mastima Centre along Naivasha-Maai Mahiu highway in Naivasha.</p>
-    </section>
-
-    <section id="why">
-      <h2>Why Choose Us</h2>
-      <ul>
-        <li>Trusted and Reliable. We sell high quality roof sheets which meets the roofing industry standards and are able to withsand every local weather condition.</li>
-        <li>Affordable Pricing. We offer the best prices in the currect market for the different varieties of mabati to meet the needs of our costomers.</li>
-        <li>Skilled Professionals</li>
-        <li>Timely Project Completion. We provide transportation services to our customers and timely delivery</li>
-        <li>Customer Satisfaction Guaranteed</li>
-      </ul>
-    </section>
-
-    <section id="products">
-      <h2>Our Products</h2>
-      <ul>
-        <li>Box Profile Sheets</li>
-        <li>Longonot Valletile</li>
-        <li>Longonot Roman Tile</li>
-        <li>Longonot Roll Top</li>
-        <li>Longonot Bowtile</li>
-        <li>Longonot Valleys</li>
-        <li>Longonot Ridge Cap Sheets</li>
-        <li>Roofing Nails and Rubbers</li>
-        <li>Corrugated Mabati</li>
-        <li>Coloured & Custom Length Sheets</li>
-      </ul>
-      <div class="product-gallery">
-        <img src="box profile.jpg" alt="Box Profile">
-        <img src="valletile.jpg" alt="Valletile">
-        <img src="roman tile.jpg" alt="Roman Tile">
-        <img src="Roll Top.jpg"alt="Roll Top">
-        <img src="bowtile.jpg" alt="Bowtile">
-        <img src="valleys.jpg" alt="Valleys">
-        <img src="ridge cap.jpg" alt="Ridge Cap">
-        <img src="Roofing Nails and Rubbers.jpg" alt="Roofing Nails and Rubbers">
-        <img src="root 8.jpg" alt="Root 8">
-        <img src="root 9.jpg" alt="Root 9">
-      </div>
-      
-<section>
-  <h2>Project Gallery</h2>
-  <div class="gallery">
-    <img src="root 3.jpg" alt="Root 3" class="active">
-    <img src="root 4.jpg" alt="Root 4">
-    <img src="root 5.jpg" alt="Root 5">
-    <img src="root 6.jpg" alt="Root 6">
-    <img src="root 7.jpg" alt="Root 7">
   </div>
-</section>
+</footer>
 
-    <section id="contact" style="background-color: #f7f7f7; padding: 50px 20px;">
-  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 32px; margin-bottom: 20px; color: #333;">Contact Us</h2>
-    
-    <p style="font-size: 18px;"><strong>Phone:</strong> <a href="tel:+254 718 081 490, +254 757 400 092"style="color: #007BFF;">+254 718 081 490, +254 757 400 092</a></p>
-    <p style="font-size: 18px;"><strong>WhatsApp:</strong> <a href="https://wa.me/+254 757 400 092" target="_blank" style="color: #007BFF;">Chat with us</a></p>
-    <p style="font-size: 18px;"><strong>Email:</strong> <a href="mailto:longonotmabatifactory@gmail.com" style="color: #007BFF;">longonotmabatifactory@gmail.com</a></p>
-       <p>Address: P.O BOX 843-20117, Naivasha</p>
-      <p>Location: Mirera Mastima Centre, Naivasha-Maai Mahiu highway, Naivasha</p>
-  </div>
-</section>
-    
-   <section id="privacy">
-      <h2>Privacy Policy</h2>
-      <p>At Mount Longonot Mabati Factory, we value your privacy.</p>
-      <p>We do <strong>not collect</strong>, store, or share any personal information from visitors to this website. This site is intended to provide general information about our roofing products and services only.</p>
-      <p>We do not use cookies, tracking technologies, or analytics tools. If we add features in the future that require collecting any personal information (such as a contact form or newsletter), we will update this policy accordingly.</p>
-    </section>
-
-    <section id="security">
-      <h2>Security Policy</h2>
-      <p>At Mount Longonot Mabati Factory, we are committed to ensuring the security of our website and any information shared through it.</p>
-      <ul>
-        <li>We use secure hosting environments to minimize the risk of unauthorized access.</li>
-        <li>All website data is protected using standard security protocols.</li>
-        <li>We do not store sensitive customer information on this site.</li>
-        <li>Any future forms or contact methods will use encrypted communication (HTTPS).</li>
-        <li>We routinely monitor and update our website for vulnerabilities and patches.</li>
-      </ul>
-      <p>If you identify any issues or vulnerabilities, please notify us immediately at <strong>longonotmabatifactory@gmail.com</strong>.</p>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Mount Longonot Mabati Factory | All Rights Reserved</p>
-    <div class="footer-links">
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#security">Security Policy</a>
-    </div>
-  </footer>
-
-  <script>
-    const slides = document.querySelectorAll(".gallery img");
-    let index = 0;
-
-    setInterval(() => {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }, 3000);
-
-    document.getElementById("email").innerHTML = '<a href="mailto:' + 'info' + '@' + 'longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a>';
-  </script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.gallery img');
     let current = 0;
-
     setInterval(() => {
       images[current].classList.remove('active');
       current = (current + 1) % images.length;
       images[current].classList.add('active');
-    }, 3000); // change image every 3 seconds
+    }, 3000);
   });
 </script>
+
 </body>
 </html>
