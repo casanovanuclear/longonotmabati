@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <header class="site-header">
-  <img src="Company Logo.png" alt="Company Logo" class="logo">
-  <h1 class="site-title">MT Longonot Mabati Factory</h1>
-    </header>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline';">
   <title>Mt Longonot Mabati Factory Ltd</title>
   <style>
+    .logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.header-content {
+  text-align: center;
+  color: yellow;
+  background-image: url('roof header.jpeg');
+  background-size: cover;
+  background-position: top center;
+  padding: 60px 20px;
+}
     * {
       box-sizing: border-box;
     }
@@ -138,10 +148,13 @@
   </style>
 </head>
 <body>
-  <header>
+<header>
+  <div class="header-content">
+    <img src="Company Logo.png" alt="Company Logo" class="logo">
     <h1>Mount Longonot Mabati Factory</h1>
     <p>Mabati Ya Ki-Sure</p>
-  </header>
+  </div>
+</header>
 
   <nav>
     <a href="#about">About Us</a>
