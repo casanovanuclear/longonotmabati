@@ -7,7 +7,7 @@
   <title>Mt Longonot Mabati Factory Ltd</title>
   <style>
     header {
-      background: url('roof header.jpg') no-repeat center center;
+      background: url('images/roof header.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
       height: 100vh;
@@ -18,7 +18,6 @@
       color: yellow;
     }
 
-    /* Dark overlay for readability */
     header::before {
       content: '';
       position: absolute;
@@ -26,7 +25,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.2); /* white overlay, 20% opacity */
+      background-color: rgba(255, 255, 255, 0.2);
       z-index: 1;
     }
 
@@ -178,7 +177,7 @@
 <body>
   <header>
     <div class="header-content">
-      <img src="Company Logo.png" alt="Company Logo" class="logo">
+      <img src="images/Company Logo.png" alt="Company Logo" class="logo">
       <h1>Mount Longonot Mabati Factory</h1>
       <p class="slogan">Mabati Ya Ki-Sure</p>
     </div>
@@ -188,6 +187,7 @@
     <a href="#about">About Us</a>
     <a href="#why">Why Choose Us</a>
     <a href="#products">Our Products</a>
+    <a href="#gallery">Project Gallery</a>
     <a href="#contact">Contact</a>
     <a href="#privacy">Privacy Policy</a>
     <a href="#security">Security Policy</a>
@@ -202,10 +202,10 @@
     <section id="why">
       <h2>Why Choose Us</h2>
       <ul>
-        <li>Trusted and Reliable. We sell high quality roof sheets which meets the roofing industry standards and are able to withstand every local weather condition.</li>
-        <li>Affordable Pricing. We offer the best prices in the current market for the different varieties of mabati to meet the needs of our customers.</li>
+        <li>Trusted and Reliable</li>
+        <li>Affordable Pricing</li>
         <li>Skilled Professionals</li>
-        <li>Timely Project Completion. We provide transportation services to our customers and timely delivery.</li>
+        <li>Timely Project Completion</li>
         <li>Customer Satisfaction Guaranteed</li>
       </ul>
     </section>
@@ -225,35 +225,35 @@
         <li>Coloured & Custom Length Sheets</li>
       </ul>
       <div class="product-gallery">
-        <img src="box profile.jpg" alt="Box Profile">
-        <img src="valletile.jpg" alt="Valletile">
-        <img src="roman tile.jpg" alt="Roman Tile">
-        <img src="Roll Top.jpg" alt="Roll Top">
-        <img src="bowtile.jpg" alt="Bowtile">
-        <img src="valleys.jpg" alt="Valleys">
-        <img src="ridge cap.jpg" alt="Ridge Cap">
-        <img src="Roofing Nails and Rubbers.jpg" alt="Roofing Nails and Rubbers">
-        <img src="root 8.jpg" alt="Root 8">
-        <img src="root 9.jpg" alt="Root 9">
+        <img src="images/box profile.jpg" alt="Box Profile">
+        <img src="images/valletile.jpg" alt="Valletile">
+        <img src="images/roman tile.jpg" alt="Roman Tile">
+        <img src="images/roll top.jpg" alt="Roll Top">
+        <img src="images/bowtile.jpg" alt="Bowtile">
+        <img src="images/valleys.jpg" alt="Valleys">
+        <img src="images/ridge cap.jpg" alt="Ridge Cap">
+        <img src="images/Roofing Nails and Rubbers.jpg" alt="Roofing Nails and Rubbers">
+        <img src="images/root 8.jpg" alt="Root 8">
+        <img src="images/root 9.jpg" alt="Root 9">
       </div>
     </section>
 
-    <section>
+    <section id="gallery">
       <h2>Project Gallery</h2>
       <div class="gallery">
-        <img src="root 3.jpg" alt="Root 3" class="active">
-        <img src="root 4.jpg" alt="Root 4">
-        <img src="root 5.jpg" alt="Root 5">
-        <img src="root 6.jpg" alt="Root 6">
-        <img src="root 7.jpg" alt="Root 7">
+        <img src="images/root 3.jpg" alt="Root 3" class="active">
+        <img src="images/root 4.jpg" alt="Root 4">
+        <img src="images/root 5.jpg" alt="Root 5">
+        <img src="images/root 6.jpg" alt="Root 6">
+        <img src="images/root 7.jpg" alt="Root 7">
       </div>
     </section>
 
     <section id="contact" style="background-color: #f7f7f7; padding: 50px 20px;">
       <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
         <h2>Contact Us</h2>
-        <p><strong>Phone 1:</strong> <a href="tel:+254718081490">+254 718 081 490</a></p>
-        <p><strong>Phone 2:</strong> <a href="tel:+254757400092">+254 757 400 092</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+254718081490">+254 718 081 490</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+254757400092">+254 757 400 092</a></p>
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/+254757400092" target="_blank">Chat with us</a></p>
         <p><strong>Email:</strong> <a href="mailto:longonotmabatifactory@gmail.com">longonotmabatifactory@gmail.com</a></p>
         <p>Address: P.O BOX 843-20117, Naivasha</p>
@@ -285,18 +285,6 @@
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.gallery img');
-      let index = 0;
-
-      setInterval(() => {
-        slides[index].classList.remove('active');
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('active');
-      }, 3000);
-    });
-  </script>
+  <script src="slideshow.js"></script>
 </body>
 </html>
-
